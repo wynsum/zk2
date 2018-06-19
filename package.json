@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "gulp-sequence": "^1.0.0"
+  },
+  "name": "zk2",
+  "description": "zk2",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "_gulp-sequence@1.0.0@gulp-sequence": "^1.0.0",
+    "_thunks@4.9.2@thunks": "^4.9.2",
+    "thunks": "^4.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wynsum/zk2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wynsum/zk2/issues"
+  },
+  "homepage": "https://github.com/wynsum/zk2#readme"
+}
