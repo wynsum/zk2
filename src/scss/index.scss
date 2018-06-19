@@ -71,6 +71,7 @@ body {
         overflow: hidden;
         background: #7E0505;
         padding: 0 .08rem;
+        overflow-y: auto;
         h2 {
             width: 100%;
             text-align: center;
@@ -100,6 +101,19 @@ body {
                     }
                 }
             }
+        }
+        h3 {
+            width: 100%;
+            text-align: center;
+            height: .34rem;
+            line-height: .34rem;
+            color: #fff;
+            font-size: .18rem;
+        }
+        .select {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
         }
     }
     footer {

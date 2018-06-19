@@ -7,6 +7,8 @@ var minjs = require('gulp-uglify');
 
 var minhtml = require('gulp-htmlmin');
 
+var mincss = require('gulp-clean-css');
+
 var server = require('gulp-webserver');
 
 var sequence = require('gulp-sequence');
@@ -50,9 +52,15 @@ gulp.task('server', ['sass'], function() {
 gulp.task('sass', function() {
     gulp.src('./src/scss/*.scss')
         .pipe(sass())
+        .pipe(mincss())
         .pipe(gulp.dest('./src/css'))
 });
 
+gulp.task('minjs', function() {
+    gulp.src('./src/js/app/index.js')
+        .pipe(minjs())
+        .pipe(gulp.dest('./src/js/app/index1.js'))
+});
 
 gulp.task('default', function(cb) {
     sequence('server', cb);
