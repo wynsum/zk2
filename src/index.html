@@ -6,14 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
     <div class="wrap">
-        <header>头部</header>
-        <section></section>
-        <footer></footer>
+        <section class="sec">
+            <h2>必买大牌</h2>
+            <div class="big">
+                <!-- <dl>
+                    <dt><img src="./img/1.jpg" alt=""></dt>
+                    <dd>满300减70</dd>
+                </dl>
+                <dl>
+                    <dt><img src="./img/2.jpg" alt=""></dt>
+                    <dd>满300减70</dd>
+                </dl>
+                <dl>
+                    <dt><img src="./img/3.jpg" alt=""></dt>
+                    <dd>满300减70</dd>
+                </dl>
+                <dl>
+                    <dt><img src="./img/2.jpg" alt=""></dt>
+                    <dd>满300减70</dd>
+                </dl>
+                <dl>
+                    <dt><img src="./img/3.jpg" alt=""></dt>
+                    <dd>满300减70</dd>
+                </dl> -->
+
+            </div>
+        </section>
+        <footer>
+            <dl>
+                <dt><img src="./img/1.png" alt=""></dt>
+                <dd>主会场</dd>
+            </dl>
+            <dl>
+                <dt><img src="./img/2.png" alt=""></dt>
+                <dd>全部会场</dd>
+            </dl>
+            <dl>
+                <dt><img src="./img/3.png" alt=""></dt>
+                <dd>抢5折券</dd>
+            </dl>
+            <dl>
+                <dt><img src="./img/4.png" alt=""></dt>
+                <dd>榜单会场</dd>
+            </dl>
+            <dl>
+                <dt><img src="./img/5.png" alt=""></dt>
+                <dd>我的618</dd>
+            </dl>
+        </footer>
     </div>
 </body>
+<script src="./js/libs/require.js"></script>
+<script>
+    require(['./js/main.js'], function() {
+        require(['index'])
+    })
+</script>
+<script id="tpl" type="text/x-handlebars-template">
+    {{#each big}}
+    <dl>
+        <dt><img src={{img}} alt=""></dt>
+        <dd>{{title}}</dd>
+    </dl>
+    {{/each}}
+</script>
 
 </html>

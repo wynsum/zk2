@@ -21,12 +21,13 @@ var fs = require('fs');
 
 var url = require('url');
 
+var data = require('./data/data.json');
+
 // 起服务器
-gulp.task('server', function() {
+gulp.task('server', ['sass'], function() {
     gulp.src('src')
         .pipe(server({
             port: 9090,
-            open: true,
             livereload: true,
             middleware: function(req, res, next) {
                 var pathname = url.parse(req.url).pathname;
@@ -35,8 +36,24 @@ gulp.task('server', function() {
                     return false;
                 }
 
-                pathname = pathname === '/' ? '/index.html' : pathname;
-                res.end(fs.readFileSync(path.join(__dirname, 'src', pathname)))
+                if (pathname === '/api/big') {
+                    res.end(JSON.stringify(data))
+                } else {
+                    pathname = pathname === '/' ? '/index.html' : pathname;
+                    res.end(fs.readFileSync(path.join(__dirname, 'src', pathname)))
+                }
             }
         }))
+})
+
+
+gulp.task('sass', function() {
+    gulp.src('./src/scss/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('./src/css'))
+});
+
+
+gulp.task('default', function(cb) {
+    sequence('server', cb);
 })
